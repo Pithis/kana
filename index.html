@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>KANA Entertainment | Premium Amusement Equipment & FEC Solutions</title>
+  <meta name="description"
+    content="KANA Entertainment supplies, designs, and delivers high-end entertainment hardware including VR simulators, bowling lanes, soft play, trampolines, and amusement rides globally." />
+
+  <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon (Inline SVG to avoid missing resource issues) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23c5a880%22 font-family=%22Outfit,sans-serif%22 font-weight=%22bold%22>K</text></svg>">
+
+  <style>
+    /* Prevent initial FOUC (Flash of Unstyled Content) and set up root loading page */
+    html,
+    body {
+      background: #fbfaf7;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: #1d1d1f;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Renders loading state before main JS loads -->
+    <div
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #fbfaf7;">
+      <div
+        style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px;">
+        <span style="color: #1d1d1f;">KANA</span> <span style="color: #b89566;">ENTERTAINMENT</span>
+      </div>
+      <div
+        style="width: 50px; height: 50px; border: 3px solid rgba(184, 149, 102, 0.1); border-radius: 50%; border-top-color: #b89566; animation: spin 1s linear infinite;">
+      </div>
+      <style>
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+    </div>
+  </div>
+
+  <!-- Fullscreen Page Wipe Transition Overlay -->
+  <div id="wipe-overlay" class="wipe-overlay hidden">
+    <div class="wipe-content">
+      <div class="wipe-animation-placeholder"></div>
+      <h3 class="wipe-title">KANA ENTERTAINMENT</h3>
+      <p class="wipe-subtitle">Loading...</p>
+      <div class="wipe-progress-bar">
+        <div class="wipe-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
