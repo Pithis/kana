@@ -10,7 +10,7 @@
   <meta name="description"
     content="KANA Entertainment supplies, designs, and delivers high-end entertainment hardware including VR simulators, bowling lanes, soft play, trampolines, and amusement rides globally." />
 
-  <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+  <!-- Google Fonts: Outfit for Headings, Inter for Body, Cormorant Garamond for Serifs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -19,44 +19,79 @@
 
   <!-- Favicon (Inline SVG to avoid missing resource issues) -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23c5a880%22 font-family=%22Outfit,sans-serif%22 font-weight=%22bold%22>K</text></svg>">
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23f26522%22 font-family=%22Outfit,sans-serif%22 font-weight=%22bold%22>K</text></svg>">
+
 
   <style>
-    /* Prevent initial FOUC (Flash of Unstyled Content) and set up root loading page */
+    /* Prevent initial FOUC (Flash of Unstyled Content) and set up loading */
     html,
     body {
-      background: #fbfaf7;
+      background: #faf9f6;
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      color: #1d1d1f;
+      color: #0a2c3a;
     }
   </style>
-  <script type="module" crossorigin src="/kana/assets/index-I3DCGIfj.js"></script>
-  <link rel="stylesheet" crossorigin href="/kana/assets/index-fqahKiUR.css">
+  <link rel="stylesheet" crossorigin href="/kana/assets/index-CFEdvKev.css">
 </head>
 
 <body>
-  <div id="app">
-    <!-- Renders loading state before main JS loads -->
-    <div
-      style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #fbfaf7;">
-      <div
-        style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px;">
-        <span style="color: #1d1d1f;">KANA</span> <span style="color: #b89566;">ENTERTAINMENT</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#/" class="logo-wrapper">
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" width="48" height="48" style="fill: none; overflow: visible;">
+          <!-- Vertical bar (Orange) -->
+          <rect x="15" y="15" width="10" height="70" rx="3" fill="#f26522" />
+          <!-- Upper diagonal (Orange) -->
+          <path d="M25,50 L58,18 C60,16 63,17.5 63,20.5 L63,31 C63,32.5 62,34 60.5,35 L38,55 Z" fill="#f26522" />
+          <!-- Lower diagonal (Orange) -->
+          <path d="M25,48 L60.5,80 C62,81.5 63,83 63,84.5 L63,94.5 C63,97.5 60,99 58,97 L25,66 Z" fill="#f26522" />
+          <!-- Top Dark Teal Triangle accent -->
+          <path d="M25,15 L50,15 C52,15 53,17 51.5,18.5 L25,45 Z" fill="#0a2c3a" />
+          <!-- Bottom Dark Teal Triangle accent -->
+          <path d="M25,85 L50,85 C52,85 53,83 51.5,81.5 L25,55 Z" fill="#0a2c3a" />
+          <!-- Controller Icon on right of K -->
+          <!-- D-Pad '+' -->
+          <circle cx="78" cy="42" r="7" stroke="#0a2c3a" stroke-width="2.5" />
+          <path d="M74,42 L82,42 M78,38 L78,46" stroke="#0a2c3a" stroke-width="2" />
+          <!-- Play triangle button -->
+          <circle cx="78" cy="58" r="7" stroke="#0a2c3a" stroke-width="2.5" />
+          <polygon points="76,55 81,58 76,61" fill="#0a2c3a" />
+        </svg>
+        <div class="logo-text">
+          <span class="logo-primary">KANA</span>
+          <span class="logo-secondary">ENTERTAINMENT</span>
+        </div>
+      </a>
+
+      <!-- Mobile Nav Toggle -->
+      <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#/" class="active" id="nav-link-home">Home</a></li>
+          <li><a href="#/products" id="nav-link-products">Products</a></li>
+          <li><a href="#/catalog" id="nav-link-catalog">Catalog</a></li>
+          <li><a href="#/about" id="nav-link-about">About Us</a></li>
+          <li><a href="#/contact" id="nav-link-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Action Buttons -->
+      <div class="header-ctas">
+        <button class="btn btn-outline btn-sm open-catalog-btn">Download Catalog</button>
+        <button class="btn btn-primary btn-sm quote-trigger-btn" data-product="General Inquiry">Request Quote</button>
       </div>
-      <div
-        style="width: 50px; height: 50px; border: 3px solid rgba(184, 149, 102, 0.1); border-radius: 50%; border-top-color: #b89566; animation: spin 1s linear infinite;">
-      </div>
-      <style>
-        @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      </style>
     </div>
-  </div>
+  </header>
 
   <!-- Fullscreen Page Wipe Transition Overlay -->
   <div id="wipe-overlay" class="wipe-overlay hidden">
@@ -70,6 +105,245 @@
     </div>
   </div>
 
+  <!-- Main Content Dynamic Viewport -->
+  <main id="main-content" class="main-content-flow">
+    <!-- Initial Loading State -->
+    <div
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh; background: #faf9f6;">
+      <div
+        style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px;">
+        <span style="color: #0a2c3a;">KANA</span> <span style="color: #f26522;">ENTERTAINMENT</span>
+      </div>
+      <div
+        style="width: 50px; height: 50px; border: 3px solid rgba(242, 101, 34, 0.1); border-radius: 50%; border-top-color: #f26522; animation: spin 1s linear infinite;">
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-column">
+        <a href="#/" class="logo-wrapper footer-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 100 100" width="48" height="48"
+            style="fill: none; overflow: visible;">
+            <rect x="15" y="15" width="10" height="70" rx="3" fill="#f26522" />
+            <path d="M25,50 L58,18 C60,16 63,17.5 63,20.5 L63,31 C63,32.5 62,34 60.5,35 L38,55 Z" fill="#f26522" />
+            <path d="M25,48 L60.5,80 C62,81.5 63,83 63,84.5 L63,94.5 C63,97.5 60,99 58,97 L25,66 Z" fill="#f26522" />
+            <path d="M25,15 L50,15 C52,15 53,17 51.5,18.5 L25,45 Z" fill="#0a2c3a" />
+            <path d="M25,85 L50,85 C52,85 53,83 51.5,81.5 L25,55 Z" fill="#0a2c3a" />
+            <circle cx="78" cy="42" r="7" stroke="#0a2c3a" stroke-width="2.5" />
+            <path d="M74,42 L82,42 M78,38 L78,46" stroke="#0a2c3a" stroke-width="2" />
+            <circle cx="78" cy="58" r="7" stroke="#0a2c3a" stroke-width="2.5" />
+            <polygon points="76,55 81,58 76,61" fill="#0a2c3a" />
+          </svg>
+          <div class="logo-text">
+            <span class="logo-primary">KANA</span>
+            <span class="logo-secondary">ENTERTAINMENT</span>
+          </div>
+        </a>
+        <p class="footer-desc">KANA Entertainment delivers innovative entertainment solutions, amusement attractions, VR
+          experiences, bowling systems, soft play equipment, and family entertainment products worldwide.</p>
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z" />
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.163a3.003 3.003 0 00-2.11-2.107C19.516 3.5 12 3.5 12 3.5s-7.516 0-9.388.556a3.003 3.003 0 00-2.11 2.107C0 8.028 0 12 0 12s0 3.972.502 5.837a3.003 3.003 0 002.11 2.107C4.484 20.5 12 20.5 12 20.5s7.516 0 9.388-.556a3.003 3.003 0 002.11-2.107C24 15.972 24 12 24 12s0-3.972-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/products">Products</a></li>
+          <li><a href="#/catalog">Catalog</a></li>
+          <li><a href="#/about">About Us</a></li>
+          <li><a href="#/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-column">
+        <h4>Product Categories</h4>
+        <ul>
+          <li><a href="#/products/vr-arcade">VR & Arcade</a></li>
+          <li><a href="#/products/bowling">Bowling</a></li>
+          <li><a href="#/products/soft-play">Soft Play</a></li>
+          <li><a href="#/products/trampoline-parks">Trampoline Parks</a></li>
+          <li><a href="#/products/inflatables">Inflatables</a></li>
+          <li><a href="#/products/water-theme">Water Attractions</a></li>
+          <li><a href="#/products/adventure">Adventure Attractions</a></li>
+          <li><a href="#/products/interactive">Interactive Games</a></li>
+          <li><a href="#/products/kid-rides">Kid Rides</a></li>
+          <li><a href="#/products/amusement-rides">Amusement Rides</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-column">
+        <h4>Contact Information</h4>
+        <ul>
+          <li>
+            <strong>Nagpur Plant Base:</strong><br>
+            Industrial Area Phase II, Nagpur, Maharashtra, India
+          </li>
+          <li>
+            <strong>Sales Hotlines:</strong><br>
+            <a href="tel:+919823012345">+91 98230 12345</a><br>
+            <a href="tel:+917122555123">+91 712 2555123</a>
+          </li>
+          <li>
+            <strong>Inquiries:</strong><br>
+            <a href="mailto:contact@kanaentertainment.com">contact@kanaentertainment.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 KANA Entertainment. All Rights Reserved. Built with Premium Amusement Grade Quality.</p>
+    </div>
+  </footer>
+
+  <!-- Global Quote Modal -->
+  <div id="quote-modal" class="modal-overlay hidden">
+    <div class="modal-box glassmorphism reveal-scale">
+      <button class="modal-close" aria-label="Close Modal">&times;</button>
+      <h3 class="modal-title glow-text">Request Quotation</h3>
+      <p class="modal-subtitle">Submit details and receive detailed pricing proposals within 24 business hours.</p>
+
+      <form id="modal-quote-form" class="modal-form">
+        <input type="hidden" id="modal-quote-product" name="product" value="General Sourcing">
+
+        <div class="form-group">
+          <label for="modal-product-display">Interested Item</label>
+          <input type="text" id="modal-product-display" readonly value="General Inquiry">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="modal-name" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="modal-company">Company Name <span class="required">*</span></label>
+            <input type="text" id="modal-company" required placeholder="Amusement Hub Inc">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-email">Email Address <span class="required">*</span></label>
+            <input type="email" id="modal-email" required placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label for="modal-phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="modal-phone" required placeholder="+91 98230 12345">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-location">Delivery Location <span class="required">*</span></label>
+          <input type="text" id="modal-location" required placeholder="City, Country">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-notes">Message / Custom Requirements</label>
+          <textarea id="modal-notes" rows="3"
+            placeholder="Provide details about spatial size, preferred speed levels, color schemes, or destination freight port..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-glow btn-full-width">
+          Submit Quote Request
+          <svg viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
+        </button>
+      </form>
+
+      <div id="modal-success-state" class="modal-success-box hidden">
+        <div class="success-icon">✓</div>
+        <h3>Quotation Request Submitted</h3>
+        <p>Thank you! Your quote request has been routed to our project estimator team. We will contact you at your
+          provided email with technical layout brochures within 24 business hours.</p>
+        <button class="btn btn-primary" id="modal-success-close-btn">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Download Catalog Modal -->
+  <div id="catalog-modal" class="modal-overlay hidden">
+    <div class="modal-box glassmorphism reveal-scale">
+      <button class="modal-close" aria-label="Close Modal">&times;</button>
+      <h3 class="modal-title glow-text">Download Main Catalog</h3>
+      <p class="modal-subtitle">Enter your business details to unlock instant access to KANA Entertainment's full
+        detailed catalogs.</p>
+
+      <form id="modal-catalog-form" class="modal-form">
+        <div class="form-group">
+          <label for="cat-name">Full Name <span class="required">*</span></label>
+          <input type="text" id="cat-name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="cat-email">Work Email <span class="required">*</span></label>
+          <input type="email" id="cat-email" required placeholder="john@company.com">
+        </div>
+        <div class="form-group">
+          <label for="cat-phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="cat-phone" required placeholder="+91 98230 12345">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-glow btn-full-width">
+          Download PDF Brochure
+          <svg viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+          </svg>
+        </button>
+      </form>
+
+      <div id="catalog-success-state" class="modal-success-box hidden">
+        <div class="success-icon">✓</div>
+        <h3>Catalog Download Started</h3>
+        <p>Thank you! Your high-res brochure download is beginning now. A backup link has been sent to your email.</p>
+        <button class="btn btn-primary" id="catalog-success-close-btn">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Quick Lookup Modal (Product Name Only) -->
+  <div id="quick-lookup-modal" class="modal-overlay hidden">
+    <div class="modal-box quick-lookup-modal-box reveal-scale">
+      <button class="modal-close" id="quick-lookup-close" aria-label="Close Modal">&times;</button>
+      <span class="quick-lookup-title-badge">Product Lookup Key</span>
+      <h2 class="quick-lookup-product-name" id="quick-lookup-name">Product Name</h2>
+      <div class="quick-lookup-divider"></div>
+      <p class="quick-lookup-helptext">Use this product name to search technical spec sheets in our downloadable
+        engineering catalogues.</p>
+    </div>
+  </div>
+
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="./main.js"></script>
 </body>
 
 </html>
